@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    
+    <!-- check of ingelogd -->
     <div id="content-container">
     <button>Inchecken</button>
     </div>
