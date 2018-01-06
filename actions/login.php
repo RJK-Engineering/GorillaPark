@@ -1,6 +1,7 @@
 <?php
 
-$server = "localhost";
+$server = "10.11.15.121";
+// $server = "localhost";
 $db = "gorillapark";
 $user = "gorillapark";
 $pwd = "krapallirog";
@@ -13,5 +14,7 @@ try {
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
+
+
 
 ?>
