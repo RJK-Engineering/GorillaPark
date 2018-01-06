@@ -27,6 +27,5 @@
     }    
     ?>
     </div>
-    <a href="pages/home.php">Inloggen</a>
 </body>
 </html>
