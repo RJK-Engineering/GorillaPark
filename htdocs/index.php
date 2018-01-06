@@ -12,7 +12,7 @@
 <body>
     
     <div id="content-container">
-    <form action="action/login.php" method="post">
+    <form action="actions/login.php" method="post">
         Gebruikersnaam:<br>
         <input type="text" name="username" required autofocus><br>
         Wachtwoord:<br>
@@ -27,6 +27,5 @@
     }    
     ?>
     </div>
-    <a href="pages/home.php">Inloggen</a>
 </body>
 </html>
