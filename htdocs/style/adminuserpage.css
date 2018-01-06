@@ -1,0 +1,93 @@
+
+body {
+    margin: 0px;
+    background-color: var(--main-orange);
+}
+
+.container {
+    position: relative;
+    width: 960px;
+    margin: auto;
+}
+
+.title {
+    padding: 10px;
+    border-bottom: 12px solid;
+    background: var(--main-orange);
+}
+
+.title h1 {
+    margin: 0px;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+.title h2 {
+    margin: 0px;
+    font-family: sans-serif;
+    font-weight: normal;
+    
+    padding-top: 10px;
+}
+
+.clienttadd {
+    padding: 10px;
+
+}
+
+#ClientAdd {
+    padding: 8px;
+    background: rgb(250,250,250);
+    border: 1px solid;
+    border-radius: 5px;
+    text-shadow: 0px 0px 1px;
+}
+
+.clientaddForm {
+    padding: 10px;
+    background: rgb(240,240,240);
+    border: 1px solid;
+    border-radius: 5px;
+    overflow: hidden;
+    display: none;
+}
+
+.clientaddForm label {
+    position: relative;
+    display: block;
+    width: 300px;
+    height: 10px;
+    float: left;
+    font-family: sans-serif;
+    font-size: 12px;
+    padding: 10px;
+    font-weight: bold;
+}
+.clientaddForm input {
+    border: 1px solid;
+    width: 50%;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+#Add,#Cancel {
+    border-width: medium;
+    border-color: var(--main-orange);
+    background: none;
+    border-radius: 8px;
+    border-style: solid;
+    margin: 5px;
+}
+
+.spots {
+    position: relative;
+    display: block;
+    width: 300px;
+    height: 10px;
+    float: left;
+    font-family: sans-serif;
+    font-size: 12px;
+    padding: 10px;
+    font-weight: bold;
+}
