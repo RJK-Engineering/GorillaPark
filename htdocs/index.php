@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GorillaPark login</title>
     <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="stylelogin-screen.css">
+    <link rel="stylesheet" href="style/login-screen.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 </head>
 
