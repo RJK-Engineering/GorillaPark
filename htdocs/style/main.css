@@ -1,0 +1,12 @@
+html {
+    --main-orange: #fdc437;
+}
+
+button {
+    border-width: medium;
+    border-color: var(--main-orange);
+    background: none;
+    border-radius: 8px;
+    border-style: solid;
+    margin: 5px;
+}
