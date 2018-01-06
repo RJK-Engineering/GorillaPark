@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GorillaPark home</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/home.css">
 </head>
 
 <body>
