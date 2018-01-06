@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GorillaPark toegangslog</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+
+<body>
 <?php
 
 require_once('functions.php');
@@ -38,3 +48,7 @@ foreach ($statement as $row) {
 echo '</table>'. PHP_EOL;
 
 ?>
+
+    
+</body>
+</html>
