@@ -1,20 +1,39 @@
 <?php
 
-$server = "10.11.15.121";
-// $server = "localhost";
-$db = "gorillapark";
-$user = "gorillapark";
-$pwd = "krapallirog";
+require_once('../functions.php');
 
-try {
-    $connection = new PDO("mysql:host=$server;dbname=$db", $user, $pwd);
-    // PDO can throw exceptions rather than Fatal errors, so let's change the error mode to exception
-    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "connection successful";
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+$user = $_POST['username'];
+$pass = $_POST['password'];
+
+if (!isset($user) || !isset($pass)) {
+    redirect('index.php?login_failed=1');
 }
 
+$db = connect_to_db();
 
+try {
+    // query database
+    $sql = "select 1 from user where name=:name and password=:pw";
+    $statement = $db->prepare($sql);
+    $statement->execute(array(
+        ':name' => $user,
+        ':pw' => $pass
+    ));
+    $row = $statement->fetch();
+} catch (PDOException $e) {
+    echo "Database error: " . $e->getMessage();
+    exit;
+}
+
+if (!$row) {
+    redirect('index.php?login_failed=1');
+}
+
+ob_start();
+session_start();
+
+$_SESSION['username'] = $user;
+
+redirect("home.html");
 
 ?>
