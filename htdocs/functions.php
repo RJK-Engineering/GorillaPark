@@ -18,9 +18,9 @@ function connect_to_db() {
     return $db;
 }
 
-function authenticate() {
+function authenticate($roles = array("user")) {
     session_start();
-    if (!isset($_SESSION['username'])) {
+    if (!isset($_SESSION['userrole']) || !in_array($_SESSION['userrole'], $roles)) {
         redirect('index.php?login_failed=1');
     }
 }
@@ -34,6 +34,26 @@ function redirect($page) {
     $uri .= $_SERVER['HTTP_HOST'];
     header("Location: $uri/$page");
     exit;
+}
+
+function getOption($name) {
+    $db = connect_to_db();
+    try {
+        $sql = "select value from configuration where option=:option";
+        $statement = $db->prepare($sql);
+        $statement->execute(array(
+            ':option' => $name
+        ));
+    } catch (PDOException $e) {
+        echo "Database error: " . $e->getMessage();
+        exit;
+    }
+    $row = $statement->fetch();
+    if ($row) {
+        return $row['value'];
+    } else {
+        return "";
+    }
 }
 
 ?>

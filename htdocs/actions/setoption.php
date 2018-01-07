@@ -3,11 +3,10 @@
 require_once('../functions.php');
 authenticate(array("admin"));
 
-$user = $_POST['username'];
-$pass = $_POST['password'];
-$role = $_POST['role'];
+$option = $_POST['option'];
+$value = $_POST['value'];
 
-if (!isset($user) || !isset($pass) || !isset($role)) {
+if (!isset($option) || !isset($value)) {
     echo "Something went wrong";
     exit;
 }
@@ -15,12 +14,12 @@ if (!isset($user) || !isset($pass) || !isset($role)) {
 $db = connect_to_db();
 
 try {
-    $sql = "insert into user (name, password, role) values(:name, :pw, :role)";
+    $sql = "insert into configuration (option, value) values(:option, :value)"
+        . " on duplicate key update value=:value";
     $statement = $db->prepare($sql);
     $statement->execute(array(
-        ':name' => $user,
-        ':pw' => $pass,
-        ':role' => $role
+        ':option' => $option,
+        ':value' => $value
     ));
 } catch (PDOException $e) {
     echo "Database error: " . $e->getMessage();

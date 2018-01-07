@@ -1,3 +1,8 @@
+<?php
+require_once('functions.php');
+authenticate(array("admin"));
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -8,11 +13,8 @@
 </head>
 
 <body>
+
 <?php
-
-require_once('functions.php');
-
-authenticate();
 
 $start = $_GET['startdate'];
 $end = $_GET['enddate'];
@@ -49,6 +51,5 @@ echo '</table>'. PHP_EOL;
 
 ?>
 
-    
 </body>
 </html>

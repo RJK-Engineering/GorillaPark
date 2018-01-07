@@ -4,10 +4,8 @@ require_once('../functions.php');
 authenticate(array("admin"));
 
 $user = $_POST['username'];
-$pass = $_POST['password'];
-$role = $_POST['role'];
 
-if (!isset($user) || !isset($pass) || !isset($role)) {
+if (!isset($user)) {
     echo "Something went wrong";
     exit;
 }
@@ -15,12 +13,10 @@ if (!isset($user) || !isset($pass) || !isset($role)) {
 $db = connect_to_db();
 
 try {
-    $sql = "insert into user (name, password, role) values(:name, :pw, :role)";
+    $sql = "delete from user where name=:name";
     $statement = $db->prepare($sql);
     $statement->execute(array(
-        ':name' => $user,
-        ':pw' => $pass,
-        ':role' => $role
+        ':name' => $user
     ));
 } catch (PDOException $e) {
     echo "Database error: " . $e->getMessage();

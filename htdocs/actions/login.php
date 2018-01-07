@@ -5,6 +5,11 @@ require_once('../functions.php');
 $user = $_POST['username'];
 $pass = $_POST['password'];
 
+if (!isset($user)) {
+    $user = $_GET['username'];
+    $pass = $_GET['password'];
+}
+
 if (!isset($user) || !isset($pass)) {
     redirect('index.php?login_failed=1');
 }
@@ -13,7 +18,7 @@ $db = connect_to_db();
 
 try {
     // query database
-    $sql = "select 1 from user where name=:name and password=:pw";
+    $sql = "select role from user where name=:name and password=:pw";
     $statement = $db->prepare($sql);
     $statement->execute(array(
         ':name' => $user,
@@ -26,14 +31,14 @@ try {
 }
 
 if (!$row) {
-    redirect('index.php?login_failed=1');
+    // redirect('index.php?login_failed=1');
 }
 
 ob_start();
 session_start();
 
-$_SESSION['username'] = $user;
+$_SESSION['userrole'] = $row['role'];
 
-redirect("/pages/home.php");
+redirect("home.php");
 
 ?>
