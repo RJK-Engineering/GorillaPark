@@ -6,7 +6,7 @@
     <title>GorillaPark login</title>
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/login-screen.css">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/apple-icon-152x152.png" type="image/x-icon" />
 </head>
 
 <body>
