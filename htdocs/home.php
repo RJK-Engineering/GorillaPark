@@ -19,7 +19,17 @@ authenticate(array("user", "admin", "service"));
          <header>
             <h1><img id="logo" src="images/gorilla_park_blink_logo.svg" alt="GorillaPark"></h1>
         </header>
-    <button id="check-in-out-button">Inchecken</button>
+    <?php
+        if (getUserCheckedin() == 1) {
+            echo '<form action="actions/checkout.php" method="GET">';
+            echo '<button type="submit" id="check-in-out-button">Uitchecken</button>';
+            echo '</form>';
+        } else {
+            echo '<form action="actions/checkin.php" method="GET">';
+            echo '<button type="submit" id="check-in-out-button">Inchecken</button>';
+            echo '</form>';
+        }
+    ?>
     </div>
 
 

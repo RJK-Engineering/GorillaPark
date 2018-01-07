@@ -18,7 +18,7 @@ $db = connect_to_db();
 
 try {
     // query database
-    $sql = "select role from user where name=:name and password=:pw";
+    $sql = "select name, role, checkedin from user where name=:name and password=:pw";
     $statement = $db->prepare($sql);
     $statement->execute(array(
         ':name' => $user,
@@ -37,7 +37,9 @@ if (!$row) {
 ob_start();
 session_start();
 
+$_SESSION['username'] = $row['name'];
 $_SESSION['userrole'] = $row['role'];
+$_SESSION['usercheckedin'] = $row['checkedin'];
 
 redirect("home.php");
 

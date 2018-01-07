@@ -56,4 +56,42 @@ function getOption($name) {
     }
 }
 
+function getUserCheckedin() {
+    $db = connect_to_db();
+    try {
+        $sql = "select checkedin from user where name=:name";
+        $statement = $db->prepare($sql);
+        $statement->execute(array(
+            ':name' => $_SESSION['username'],
+        ));
+        $row = $statement->fetch();
+    } catch (PDOException $e) {
+        echo "Database error: " . $e->getMessage();
+        exit;
+    }
+
+    if ($row) {
+        if ($row['checkedin']) {
+            return $row['checkedin'];
+        }
+    }
+    return 0;
+}
+
+function openBarrier() {
+    $db = connect_to_db();
+    try {
+        $sql = "insert into configuration (option, value) values(:option, :value)"
+            . " on duplicate key update value=:value";
+        $statement = $db->prepare($sql);
+        $statement->execute(array(
+            ':option' => 'open_barrier',
+            ':value' => 1
+        ));
+    } catch (PDOException $e) {
+        echo "Database error: " . $e->getMessage();
+        exit;
+    }
+}
+
 ?>
