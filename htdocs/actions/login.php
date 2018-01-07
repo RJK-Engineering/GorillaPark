@@ -34,6 +34,6 @@ session_start();
 
 $_SESSION['username'] = $user;
 
-redirect("home.html");
+redirect("/pages/home.php");
 
 ?>
