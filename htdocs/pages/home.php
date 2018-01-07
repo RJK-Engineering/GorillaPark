@@ -11,8 +11,25 @@
 <body>
     <!-- check of ingelogd -->
     <div id="content-container">
-    <button>Inchecken</button>
+         <header>
+            <h1><img id="logo" src="../images/gorilla_park_blink_logo.svg" alt="GorillaPark"></h1>
+        </header>
+    <button id="check-in-out-button">Inchecken</button>
     </div>
+    
+    
+    
+    
+    <!-- check status ingecheckt of uitgecheckt, buttons aanpassen -->
+    
+    
+    
+    <!--Log in blink animation-->
+    <script>
+        setTimeout(function() {
+        document.getElementById("logo").src="../images/gorilla_park_logo.svg";
+        }, 200)
+    </script>
     
 </body>
 </html>
