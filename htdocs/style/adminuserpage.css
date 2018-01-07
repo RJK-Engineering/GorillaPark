@@ -1,102 +1,32 @@
-
 body {
-    margin: 0px;
-    background-color: var(--main-orange);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.container {
-    position: relative;
-    width: 960px;
-    margin: auto;
-}
-
-.title {
+form {
+    text-align: center;
+    border: medium solid var(--main-orange);
     padding: 10px;
-    background: var(--main-orange);
+    border-radius: 10px;
 }
 
-.title h1 {
-    margin: 0px;
-    font-family: sans-serif;
-    font-weight: normal;
-}
-.title h2 {
-    margin: 0px;
-    font-family: sans-serif;
-    font-weight: normal;
-    
-    padding-top: 10px;
-}
-
-.clienttadd {
-    padding: 10px;
-
-}
-
-#ClientAdd {
-    border-width: medium;
-    border-color: var(--main-orange);
-    background: #FFF;
+input {
     border-radius: 8px;
     border-style: solid;
+    border-width: thin;
     margin: 5px;
+    padding: 4px 4px 4px 4px;
 }
 
-.clientaddForm {
-    padding: 10px;
-    background: rgb(240,240,240);
-    border: 1px solid;
-    border-radius: 5px;
-    overflow: hidden;
-    display: none;
-}
 
-.clientaddForm label {
-    position: relative;
-    display: block;
-    width: 300px;
-    height: 10px;
-    float: left;
-    font-family: sans-serif;
-    font-size: 12px;
-    padding: 10px;
-    font-weight: bold;
-}
-.clientaddForm input {
-    border: 1px solid;
-    width: 50%;
-    padding: 10px;
-    font-weight: bold;
-    border-radius: 5px;
-    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.2);
-}
-
-#Add,#Cancel {
-    border-width: medium;
+input:focus {
     border-color: var(--main-orange);
+}
+
+input[type=submit] {
+    border-width: medium;
+    border-color: black;
     background: none;
-    border-radius: 8px;
-    border-style: solid;
-    margin: 5px;
-}
-
-.spots {
-    position: relative;
-    display: inline-block;
-    width: 30px;
-    height: 10px;
-    float: left;
-    font-size: 12px;
-    padding: 10px;
-    font-weight: bold;
-}
-.datestart {
-    position: relative;
-    display: inline-block;
-    width: 30px;
-    height: 10px;
-    float: left;
-    font-size: 12px;
-    padding: 10px;
-    font-weight: bold;
+    padding: 3px 10px 3px 10px;
 }
