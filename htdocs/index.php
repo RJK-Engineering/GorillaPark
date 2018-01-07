@@ -6,12 +6,16 @@
     <title>GorillaPark login</title>
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/login-screen.css">
+   <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon" />-->
     <link rel="icon" href="/apple-icon-152x152.png" type="image/x-icon" />
 </head>
 
 <body>
     
     <div id="content-container">
+        <header>
+            <h1><img id="logo" src="images/gorilla_park_logo.svg" alt="GorillaPark"></h1>
+        </header>
     <form action="actions/login.php" method="post">
         Gebruikersnaam:<br>
         <input type="text" name="username" required autofocus><br>
